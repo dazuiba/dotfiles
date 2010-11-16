@@ -1,0 +1,15 @@
+[alias]
+	co = checkout
+	ci = commit 
+	cm = commit -m
+	s = status
+	st = status
+
+[user]
+  email = YOUR.EMAIL@company.com
+  name = YOUR NAME
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
