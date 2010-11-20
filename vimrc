@@ -101,14 +101,16 @@ let mapleader = ","
 
 map <Leader>vi :sp ~/.vimrc<cr>
 map <Leader>u :source ~/.vimrc<cr>
-map <Leader>q :wq<cr>
+map <Leader>q :q<cr>
 map <Leader>w :w<cr>
+map <Leader>e :wq<cr>
 map <Leader>c :TComment<cr>
 " Move lines up and down
 "map <C-J> :m +1 <CR>
 "map <C-K> :m -2 <CR>
 
 nmap <silent> <C-D> :NERDTreeToggle<CR>
+nmap <Leader>r :NERDTreeFind<CR>
 
 " No Help, please
 nmap <F1> <Esc>
@@ -116,8 +118,11 @@ nmap <F1> <Esc>
 " Press ^F from insert mode to insert the current file name
 imap <C-F> <C-R>=expand("%")<CR>
 
-" Maps autocomplete to tab
+map <S-D-Right> :bnext<cr>
+map <S-D-Left> :bprevious<cr>
 
+
+" Maps autocomplete to tab
 "imap <Tab> <C-N>
 imap <C-L> <Space>=><Space>
 
