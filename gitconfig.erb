@@ -3,21 +3,30 @@
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
 	co = checkout
-	ci = commit 
-	cm = commit -m
-	s = status
+	ci = commit
+  cm = commit -m
+  dm = svn dcommit
+  s = status
 	st = status
+  b = branch
+	br = branch
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)< %an >%Creset' --abbrev-commit --date=relative
+	wip = "git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
+	unwip = git log -n 1 | grep -q -c wip && git reset HEAD~1
+	cs = commit -s
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 [core]
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
+	excludesfile = ~/.gitignore
+	; editor = mate -w
 	autocrlf = input
 [apply]
 	whitespace = nowarn
 [format]
-	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+  #pretty = %C(yellow)%h%Creset %an %s %C(red)(%cr)%Creset
+  pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)%an %Creset
 [github]
 	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
 	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>

@@ -1,15 +1,32 @@
+[user]
+	name = ''
+	email = ''
 [alias]
 	co = checkout
-	ci = commit 
-	cm = commit -m
-	s = status
+	ci = commit
+  cm = commit -m
+  dm = svn dcommit
+  s = status
 	st = status
-
-[user]
-  email = YOUR.EMAIL@company.com
-  name = YOUR NAME
-
+  b = branch
+	br = branch
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	wip = "git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
+	unwip = git log -n 1 | grep -q -c wip && git reset HEAD~1
+	cs = commit -s
 [color]
-  diff = auto
-  status = auto
-  branch = auto
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = ~/.gitignore
+	; editor = mate -w
+	autocrlf = input
+[apply]
+	whitespace = nowarn
+[format]
+  #pretty = %C(yellow)%h%Creset %an %s %C(red)(%cr)%Creset
+  pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)%an %Creset
+[github]
+	user = ''
+	token = ''
