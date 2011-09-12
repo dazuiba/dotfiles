@@ -14,3 +14,4 @@ function railsapp {
 
 # misc
 alias reload='. ~/.bash_profile'
+alias ruby='ruby -rubygems'

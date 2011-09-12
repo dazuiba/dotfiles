@@ -105,6 +105,11 @@ map <Leader>q :q<cr>
 map <Leader>w :w<cr>
 map <Leader>e :wq<cr>
 map <Leader>c :TComment<cr>
+
+
+
+map <Leader>1 :b 1<cr>
+map <Leader>2 :b 2<cr>
 " Move lines up and down
 "map <C-J> :m +1 <CR>
 "map <C-K> :m -2 <CR>
