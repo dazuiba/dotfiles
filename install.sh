@@ -22,5 +22,4 @@ files.each do |file|
   else
     `ln -fsh #{File.expand_path file} #{target}"`
   end
-  
 end
